@@ -1,22 +1,22 @@
 package com.ifsp.edu.br;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
+        YoutubeChannel canal = new YoutubeChannel();
 
-        SubjectImpl subject = new SubjectImpl();
+        NoNotificationSubscriber ana = new NoNotificationSubscriber("Ana");
 
-        ObserverImpl observer1 = new ObserverImpl("Observer 1");
-        ObserverImpl observer2 = new ObserverImpl("Observer 2");
-        ObserverImpl observer3 = new ObserverImpl("Observer 3");
+        CustomSubscriber bob = new CustomSubscriber("Bob", List.of("live", "ao vivo"));
+        canal.subscribeWithCustom(bob);
 
-        subject.register(observer1);
-        subject.register(observer2);
-        subject.register(observer3);
+        AllNotificationsSubscriber carol = new AllNotificationsSubscriber("Carol");
+        canal.subscribeWithAll(carol);
 
-        subject.setState("New State");
+        canal.uploadVideo("Tutorial de Java");
+        canal.uploadVideo("Live ao vivo de programação");
 
-        subject.remove(observer1);
-
-        subject.setState("New State");
+        ana.checkManually(canal);
     }
 }
