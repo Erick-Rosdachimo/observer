@@ -20,4 +20,8 @@ public class CustomSubscriber implements Subscriber {
             System.out.println("🔔 " + name + " recebeu notificação personalizada: \"" + videoTitle + "\"");
         }
     }
+
+    public void checkManually(YoutubeChannel channel) {
+        System.out.println(name + " verificou o canal "+channel.getName()+" manualmente.");
+    }
 }

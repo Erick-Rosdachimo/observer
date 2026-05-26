@@ -4,9 +4,10 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        YoutubeChannel canal = new YoutubeChannel();
+        YoutubeChannel canal = new YoutubeChannel("Porta dos Fundos");
 
         NoNotificationSubscriber ana = new NoNotificationSubscriber("Ana");
+        canal.subscribe(ana);
 
         CustomSubscriber bob = new CustomSubscriber("Bob", List.of("live", "ao vivo"));
         canal.subscribe(bob);

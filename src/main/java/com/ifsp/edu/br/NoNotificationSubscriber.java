@@ -12,6 +12,6 @@ public class NoNotificationSubscriber implements Subscriber {
     }
 
     public void checkManually(YoutubeChannel channel) {
-        System.out.println(name + " verificou o canal manualmente.");
+        System.out.println(name + " verificou o canal "+channel.getName()+" manualmente.");
     }
 }

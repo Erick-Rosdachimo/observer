@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class YoutubeChannel implements Subject {
+    private final String name;
     private final List<Subscriber> subscribers = new ArrayList<>();
+
+    public YoutubeChannel(String name) {
+        this.name = name;
+    }
 
     @Override
     public void subscribe(Subscriber subscriber) {
@@ -26,5 +31,9 @@ public class YoutubeChannel implements Subject {
 
     public void uploadVideo(String title) {
         notifySubscribers(title);
+    }
+
+    public String getName() {
+        return name;
     }
 }

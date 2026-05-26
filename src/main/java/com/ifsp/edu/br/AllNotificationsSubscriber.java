@@ -11,4 +11,8 @@ public class AllNotificationsSubscriber implements Subscriber {
     public void notify(String videoTitle) {
         System.out.println("🔔🔔 " + name + " recebeu notificação (todas): \"" + videoTitle + "\"");
     }
+
+    public void checkManually(YoutubeChannel channel) {
+        System.out.println(name + " verificou o canal "+channel.getName()+" manualmente.");
+    }
 }
